@@ -1,0 +1,17 @@
+.container-narrow
+  .masthead
+    %h3.muted Anagram Finder
+  %hr/
+  = form_tag '/upload', :multipart => true do
+    = label_tag :uploaded_file, 'Upload your txt file.'
+    = file_field_tag :uploaded_file
+    = submit_tag "Load new dictionary", :class => "btn btn-large pull-right"
+  = @upload
+  %hr/
+  = form_tag("/", :method => "get", :remote => true) do |f|
+    = label_tag :anagram, 'Enter a word to search for anagrams'
+    = text_field_tag :anagram
+    = submit_tag("Search", :name => nil, :class => "btn btn-large pull-right")
+  %hr/
+  .hero-unit
+    #content

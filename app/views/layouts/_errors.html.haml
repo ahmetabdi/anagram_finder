@@ -1,0 +1,6 @@
+- flash.each do |key, value|
+  .message
+    %div{:class => "alert alert-#{key}"}
+      %button.close{"data-dismiss" => "alert", :href => "#", :type => "button"} ×
+      %center
+        %strong= value
